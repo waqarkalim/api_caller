@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.mainConatinerStyle {
+  flex-direction: 'column';
+  flex: 1;
+}
+
+.floatingMenuButtonStyle {
+  /* align-self: 'flex-end'; */
+  flex: 0;
+  position: 'absolute';
+  bottom: 35;
+}

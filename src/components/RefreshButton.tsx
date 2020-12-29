@@ -1,21 +1,29 @@
 // import { useState, useEffect } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Fab } from '@material-ui/core';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
 interface Props {
+    fetched: boolean;
     toRefresh: boolean;
     setToRefresh: (toRefresh: boolean) => void;
+    className: any
 }
 
-function RefreshButton({toRefresh, setToRefresh} : Props) {
+function RefreshButton({fetched, toRefresh, setToRefresh, className} : Props) {
     // const [disabled, setDisabled] = useState(false);
 
     return (
-        <Button onClick={() => {
-            setToRefresh(!toRefresh);
-        }}>
-            <RefreshIcon/>
-        </Button>
+        <>
+            {fetched ? (
+            <>
+                <Fab className={className} onClick={() => {
+                    setToRefresh(!toRefresh);
+                }}>
+                    <RefreshIcon/>
+                </Fab>
+            </>) : (
+            <> </>)}
+        </>
     )
 }
 
